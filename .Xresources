@@ -1,0 +1,139 @@
+s#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
+
+!Xft.dpi: 96
+1Xft.antialias: true
+!Xft.hinting: true
+!Xft.rgba: rgb
+!Xft.autohint: false
+!Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+
+!XTerm*background: #2b2b2b
+!XTerm*foreground: #e7e7e7
+XTerm*pointerColor: #16A085
+XTerm*faceName: Fixed
+XTerm*faceSize: 11
+
+*background:            #272827
+*foreground:            #657b83
+*fading:                15
+*fadeColor:             black
+*cursorColor:           #16A085
+*pointerColorBackground:#2B2C2B
+*pointerColorForeground:#16A085
+
+! black
+!!color 0 = first bar
+*.color0:       #1d1f21
+*.color8:       #969896
+
+! red
+*.color1:       #cc342b
+*.color9:       #cc342b
+
+! green
+*.color2:       #198844
+*.color10:      #198844
+
+! yellow
+*.color3:       #fba922
+*.color11:      #fba922
+
+! blue
+!! colour 4 = 2nd bar
+*.color4:       #3971ed
+*.color12:      #3971ed
+
+! magenta
+*.color5:       #a36ac7
+*.color13:      #a36ac7
+
+! cyan
+*.color6:       #3971ed
+*.color14:      #3971ED
+
+! white
+*.color7:       #c5c8c6
+*.color15:      #ffffff
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xcursor.theme: Chameleon-Pearl-Regular-0.5
+Xcursor.size:  0
+
+XTerm*background: #272827
+XTerm*foreground: #fdf6e3
+!XTerm*reverseVideo: on
+!XTerm*faceName: Terminus:size=11:antialias=true
+!XTerm*selectToClipboard: true
+
+URxvt.font:xft:Hack:size=12
+URxvt.letterSpace: -1
+URxvt.depth: 32
+URxvt.background: [80]#000000
+URxvt*scrollBar:                      false
+URxvt*mouseWheelScrollPage:           false
+URxvt*cursorBlink:                    true
+!URxvt*background:                     black
+!URxvt*foreground:                     grey
+
+URxvt.color4: #0EB5ED
+URxvt.color12: #0EB5ED
+
+rofi.color-enabled: true
+!rofi.color-window: #273238, #273238, #1e2529
+!rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+!rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+!rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+
+!                  bg         border     separator
+rofi.color-window: #dd7780a1, #007780a1, #00ffffff
+!                  bg         fg       bg-alt     hl-bg      hl-fg
+rofi.color-normal: #007780a1, #ffffff, #007780a1, #007780a1, #ff00ff
+rofi.color-active: #007780a1, #ffffff, #007780a1, #007780a1, #ff00ff
+rofi.color-urgent: #007780a1, #ffffff, #007780a1, #007780a1, #ff00ff
+
+!#9575cd original rofi color
+
+!URxvt Extetions
+
+!apparently this is important for control shift things
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: fullscreen,resize-font
+URxvt.keysym.F11: perl:fullscreen:switch
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+
+!some guys color scheme
+!set $base00 #101218
+!set $base01 #1f222d
+!set $base02 #252936
+!set $base03 #7780a1
+!set $base04 #C0C5CE
+!set $base05 #d1d4e0
+!set $base06 #C9CCDB
+!set $base07 #ffffff
+!set $base08 #ee829f
+!set $base09 #f99170
+!set $base0A #ffefcc
+!set $base0B #a5ffe1
+!set $base0C #97e0ff
+!set $base0D #97bbf7
+!set $base0E #c0b7f9
+!set $base0F #fcc09e
