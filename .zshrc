@@ -8,7 +8,8 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -27,7 +28,7 @@ ZSH_THEME="agnoster"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -93,6 +94,7 @@ alias p="python ~/Documents/Development/LaptopProjects/AutoRemoteScript/AutoRemo
 alias update='yaourt -Syua'
 alias config='nano $HOME/.i3/config'
 alias dev='cd Documents/Development/'
+alias e='exit'
 
 alias b='xbacklight -set'
 
@@ -101,3 +103,25 @@ export PATH=$PATH:/home/james/Android/Sdk/platform-tools
 export PATH=$PATH:/home/james/Android/Sdk/tools
 
 alias configbackup='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+
+#VIM STUFF
+export VISUAL="vim"
+
+#set -o vi
+
+bindkey -v
+
+# allow v to edit the command line (psql behaviour)
+autoload -Uz edit-command-line
+bindkey -M vicmd '\e' edit-command-line
+
+bindkey '^A' vi-cmd-mode
+
+#powerlevel9k theme stuff
+POWERLEVEL9K_VI_INSERT_MODE_STRING="I"	
+POWERLEVEL9K_VI_COMMAND_MODE_STRING="N"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode context dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
+DEFAULT_USER=$USER
+POWERLEVEL9K_DIR_SHOW_WRITABLE=true
