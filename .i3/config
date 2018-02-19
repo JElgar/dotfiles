@@ -65,21 +65,21 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Ctrl+t exec --no-startup-id compton -bf
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+#bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+odiaeresis focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -88,10 +88,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+odiaeresis move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -105,9 +105,9 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+#bindsym $mod+h split h;exec notify-send 'tile horizontally'
+#bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+q exec python ~/.i3/vh-switch.py  
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -258,10 +258,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym odiaeresis resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -281,7 +281,7 @@ bindsym $mod+9 exec --no-startup-id i3lock -i ~/Pictures/Wallpapers/lakesunthing
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id compton -b
+exec --no-startup-id compton -bf
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -483,8 +483,15 @@ exec_always --no-startup-id dunst -config /home/james/.config/dunst/dunstrc
 #gestures
 exec_always libinput-gestures-setup start
 
-exec_always feh --bg-center /home/james/Pictures/Wallpapers/world.png
+exec_always feh --bg-center /home/james/Pictures/Wallpapers/current.png
 
 # i3 lock attempt (use man i3lock to improve)
 # i3lock -i ~/Pictures/Wallpapers/lakesunthing.png -k --insidevercolor=#ffffff22 --insidecolor=#00000000 --radius 180 --timecolor=#ffffffff --timepos="50:800" --time-align left --timesize=60 --datecolor="#ffffffff" --datesize=20 --datepos="50:850" --indpos="1050:574" --ringcolor=#29223fff --keyhlcolor=#ffffffff --bshlcolor=#e6713cff --insidevercolor=#b8606388 --insidewrongcolor=#ee7436bb --ringvercolor=#b86063ff
 # possible improvement with unblured and blured background image
+#
+#Scratchpad Terminal
+bindsym $mod+c [instance="scratchpadTerminal"] scratchpad show; [instance="scratchpadTerminal"] move position center
+for_window [instance="scratchpadTerminal"] floating enable
+for_window [instance="scratchpadTerminal"] resize set 800 500
+for_window [instance="scratchpadTerminal"] move scratchpad
+exec --no-startup-id urxvt -name scratchpadTerminal -e tmux new-session -s scratchpadTerminal

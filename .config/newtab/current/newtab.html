@@ -10,8 +10,8 @@
         { key: 'd', name: 'Drive', url: 'https://drive.google.com/drive', search: '/search?q=' },
         { key: 't', name: 'ToDo', url: 'https://web.any.do/', search: '/#/' },
       ] },
-      // { name: "Code", commands: [
-      //   { key: 'g', name: 'Hypem', url: 'http://hypem.com', search: '/search/' },
+      // { name: "Other", commands: [
+      //   { key: 't', name: 'Tranlsate', url: 'https://translate.google.co.uk/', search: '/search/' },
       //   { key: 'l', name: 'Line Radio', url: 'https://linerad.io', search: '/#/' },
       //   { key: 's', name: 'SoundCloud', url: 'https://soundcloud.com', search: '/search?q=' },
       // ] },
@@ -330,6 +330,12 @@
       }
     };
   })();
+
+//var json = JSON.parse(localStorage["queries"]);
+//for (i=0;i<json.length;i++)
+//	            if (json[i].test == 'r/joi') json.splice(i,1);
+//localStorage["results"] = JSON.stringify(json);
+
   var Form = (function() {
     var searchForm = $('#js-search-form');
     var searchInput = $('#js-search-input');

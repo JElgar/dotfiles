@@ -1,4 +1,4 @@
-s#if __has_include(".extend.Xresources")
+#if __has_include(".extend.Xresources")
 #include ".extend.Xresources"
 #endif
 
@@ -79,7 +79,8 @@ XTerm*foreground: #fdf6e3
 !XTerm*faceName: Terminus:size=11:antialias=true
 !XTerm*selectToClipboard: true
 
-URxvt.font:xft:Hack:size=12
+!URxvt.font:xft:Hack:size=12
+URxvt.font:xft:DejaVu Sans Mono for Powerline:size=12
 URxvt.letterSpace: -1
 URxvt.depth: 32
 URxvt.background: [80]#000000
@@ -88,6 +89,7 @@ URxvt*mouseWheelScrollPage:           false
 URxvt*cursorBlink:                    true
 !URxvt*background:                     black
 !URxvt*foreground:                     grey
+!URxvt.transparent: false
 
 URxvt.color4: #0EB5ED
 URxvt.color12: #0EB5ED
@@ -113,12 +115,24 @@ rofi.color-urgent: #007780a1, #ffffff, #007780a1, #007780a1, #ff00ff
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-URxvt.perl-lib: /usr/lib/urxvt/perl/
-URxvt.perl-ext-common: fullscreen,resize-font
+!URxvt.perl-lib: /usr/lib/urxvt/perl/
+URxvt.perl-ext-common: default,matcher,fullscreen,resize-font,url-select,keyboard-select
 URxvt.keysym.F11: perl:fullscreen:switch
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
 
+!!url select
+URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.launcher: firefox 
+URxvt.url-select.underline: true
+
+!!matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+!!resize-fonts
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
 
 !some guys color scheme
 !set $base00 #101218

@@ -58,6 +58,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+source $HOME/.oh-my-zsh/colors
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -122,6 +124,10 @@ bindkey '^A' vi-cmd-mode
 POWERLEVEL9K_VI_INSERT_MODE_STRING="I"	
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="N"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode context dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 DEFAULT_USER=$USER
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+
+#Colour Schemes Thing
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
