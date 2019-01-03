@@ -1,3 +1,4 @@
+"My VIMRC
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -57,6 +58,21 @@ Plugin 'shime/vim-livedown'
 
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-rmarkdown'
+
+" Vim and Tmux seemless navigation
+Plugin 'christoomey/vim-tmux-navigator'
+
+" Commenting
+Plugin 'scrooloose/nerdcommenter'
+
+" Grammer checker
+Plugin 'rhysd/vim-grammarous'
+
+" Auto close brackets but like smart
+" Plugin 'Townk/vim-autoclose'
+Plugin 'https://github.com/Raimondi/delimitMate'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -104,8 +120,8 @@ let g:livepreview_previewer = 'evince'
 nmap <F12> :LLPStartPreview<cr>
 
 " Vim Wiki Setup
-
-let g:vimwiki_list = [{'path': '~/CS/Notes/', 'syntax': 'markdown', 'ext': '.rmd'}]
+let g:vimwiki_folding='custom'
+let g:vimwiki_list = [{'path': '~/CS/Notes/', 'syntax': 'markdown', 'ext': '.Rmd'}]
 let mapleader=","
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>sudo<space>R<space>--vanilla<enter>
 autocmd Filetype rmd map <F6> :! google-chrome-stable<space>'<c-r>%<backspace><backspace><backspace>html'
@@ -128,9 +144,39 @@ let g:ctrlp_show_hidden = 1
 syntax on
 set background=dark
 colorscheme gruvbox
+set number
 set relativenumber
+set tabstop=4
 
 " Use Control A as Escape
 imap <C-A> <Esc>
 vmap <C-A> <Esc>
 nmap <C-A> <Esc>
+
+" Cop and Paste Setiings
+set pastetoggle=<F2> "F2 before pasting to preserve indentation
+
+"Map Ctrl + E and Ctrl + E then e to save and quit
+map <C-E> :w<CR> 
+map <C-E>e :wq<CR>
+
+" Splits
+set splitbelow
+set splitright
+
+" Folding
+set foldmethod=expr
+function! RmdFold()
+		let line = getline(v:lnum)
+		if match(line, '^\\begin') > -1
+				return ">1"
+		elseif match(line, '^\\end') > -1
+				return "<1"
+		else
+				return "="
+		endif
+endfunction
+
+autocmd Filetype vimwiki setlocal foldmethod=expr foldexpr=RmdFold()
+
+vmap <C-c> "+yi
