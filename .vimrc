@@ -73,8 +73,10 @@ Plugin 'rhysd/vim-grammarous'
 " Plugin 'Townk/vim-autoclose'
 Plugin 'https://github.com/Raimondi/delimitMate'
 
+"Dart
+Plugin 'https://github.com/dart-lang/dart-vim-plugin'
 
-" All of your Plugins must be added before the following line
+"" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -114,6 +116,8 @@ let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+let g:UltiSnipsEditSplit = 'vertical'
 " Latex
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'evince'
@@ -121,7 +125,7 @@ nmap <F12> :LLPStartPreview<cr>
 
 " Vim Wiki Setup
 let g:vimwiki_folding='custom'
-let g:vimwiki_list = [{'path': '~/CS/Notes/', 'syntax': 'markdown', 'ext': '.Rmd'}]
+let g:vimwiki_list = [{'path': '~/CS/Notes/', 'syntax': 'markdown', 'ext': '.Rmd'}, {'path': '~/Documents/IB/', 'syntax': 'markdown', 'ext': '.Rmd'}]
 let mapleader=","
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>sudo<space>R<space>--vanilla<enter>
 autocmd Filetype rmd map <F6> :! google-chrome-stable<space>'<c-r>%<backspace><backspace><backspace>html'
