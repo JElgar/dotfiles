@@ -15,6 +15,7 @@ ZSH_THEME="robbyrussell"
 if [ "$TMUX" = "" ]; then tmux; fi
 
 path+=('/home/james/Development/flutter/bin')
+path+=('/home/james/Development/go/bin')
 export PATH
 
 # Set list of themes to pick from when loading at random
@@ -81,9 +82,10 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export ECLIPSE_HOME="/usr/lib/eclipse/plugins/org.eclim_2.8.0/"
+export ECLIPSE_HOME="/usr/lib/eclipse"
+export "GOPATH=$HOME/Development/go"
 
-# You may need to manually set your language environment
+ #You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions

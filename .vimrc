@@ -76,6 +76,15 @@ Plugin 'https://github.com/Raimondi/delimitMate'
 "Dart
 Plugin 'https://github.com/dart-lang/dart-vim-plugin'
 
+"Web
+Plugin 'mattn/emmet-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'alexbyk/vim-ultisnips-react'
+"" Sass
+Plugin 'shmargum/vim-sass-colors'
+Plugin 'tpope/vim-haml'
+
 "" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -184,3 +193,16 @@ endfunction
 autocmd Filetype vimwiki setlocal foldmethod=expr foldexpr=RmdFold()
 
 vmap <C-c> "+yi
+
+" Emmet Extension
+
+"let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
