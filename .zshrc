@@ -16,6 +16,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 
 path+=('/home/james/Development/flutter/bin')
 path+=('/home/james/Development/go/bin')
+path+=('/home/james/Development/elm/bin')
 export PATH
 
 # Set list of themes to pick from when loading at random
@@ -82,7 +83,6 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export ECLIPSE_HOME="/usr/lib/eclipse"
 export "GOPATH=$HOME/Development/go"
 
  #You may need to manually set your language environment
@@ -114,7 +114,7 @@ export "GOPATH=$HOME/Development/go"
 alias gtw="google-chrome-stable \`sed -n 1p .links\`"
 alias gtb="google-chrome-stable \`sed -n 2p .links\`"
 alias gtv="google-chrome-stable \`sed -n 3p .links\`"
-alias v="vim"
+alias v="nvim"
 alias bris-sync="rclone sync ~/CS bris:"
 alias bris-snowy="ssh snowy"
 alias bris-windows="rdesktop -u UOB\za18968 -g 1920x1020 studentremotedesktop.bris.ac.uk"
