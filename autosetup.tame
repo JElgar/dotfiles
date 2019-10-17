@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+NAME="James"
+echo "Hello $NAME! The Config is being installed"
+
+# Symlinks
+
+ln .vimrc ~/.vimrc 
+ln .Xresources ~/.Xresources 
+ln .zshrc ~/.zshrc
+ln .tmux.conf ~/.tmux.conf
+
+mkdir -p ~/.config/nvim/
+ln ~/.vimrc ~/.config/nvim/init.vim
+
+# Done
+
+echo "Ok $NAME! I think that is all set up for you now :)"
