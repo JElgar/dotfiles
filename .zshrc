@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/james/.oh-my-zsh"
+export ZSH="/home/jelgar/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,11 +12,11 @@ ZSH_THEME="robbyrussell"
 
 
 # Startup Commands
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then tmux attach; fi
 
-path+=('/home/james/Development/flutter/bin')
-path+=('/home/james/Development/go/bin')
-path+=('/home/james/Development/elm/bin')
+# path+=('/home/james/Development/flutter/bin')
+path+=('/home/james/Documents/dev/go/bin')
+# path+=('/home/james/Development/elm/bin')
 export PATH
 
 # Set list of themes to pick from when loading at random
@@ -77,7 +77,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -121,4 +121,3 @@ alias bris-windows="rdesktop -u UOB\za18968 -g 1920x1020 studentremotedesktop.br
 alias cs="cd ~/CS/"
 alias logisim="java -jar ~/CS/ComputerArchitecture/Logisim/logisim-generic-2.7.1.jar"
 alias open="xdg-open"
-
