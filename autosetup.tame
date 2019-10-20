@@ -3,6 +3,24 @@
 NAME="James"
 echo "Hello $NAME! The Config is being installed"
 
+# Installs 
+
+sudo apt-get install tmux
+sudo apt-get install neovim
+sudo apt-get install fonts-powerline
+sudo apt-get install fonts-hack-ttf
+sudo apt-get install rxvt-unicode
+sudo apt-get install curl
+sudo apt install zsh
+
+# Install oh-my-zsh and set zsh as default shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which zsh)
+
+# Install Vim Plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Symlinks
 
 ln .vimrc ~/.vimrc 
