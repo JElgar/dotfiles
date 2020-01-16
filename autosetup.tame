@@ -31,6 +31,18 @@ ln files/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.config/nvim/
 ln ~/.vimrc ~/.config/nvim/init.vim
 
+# Install Powerline fonts
+
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
+# This should fix hack -- all the others are porbably broke but I like hack so its fine?
+sudo rm /usr/share/fonts/truetype/hack/*
+sudo cp ~/.local/share/fonts/Hack* /usr/share/fonts/truetype/hack/
+
 # Done
 
 echo "Ok $NAME! I think that is all set up for you now :)"
