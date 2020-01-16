@@ -10,14 +10,17 @@ export ZSH="/home/jelgar/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
-
 # Startup Commands
 if [ "$TMUX" = "" ]; then tmux attach; fi
 
+export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages/
 # path+=('/home/james/Development/flutter/bin')
-path+=('/home/james/Documents/dev/go/bin')
+path+=('/home/jelgar/Documents/dev/go/bin')
+path+=('/home/jelgar/Documents/dev/flutter/bin')
+path+=('/home/jelgar/.npm-packages/bin')
 # path+=('/home/james/Development/elm/bin')
 export PATH
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -35,8 +38,14 @@ export PATH
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -72,20 +81,18 @@ export PATH
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+   git
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export "GOPATH=$HOME/Development/go"
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export "GOPATH=$HOME/Development/go"
-
- #You may need to manually set your language environment
+# You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -98,9 +105,6 @@ export "GOPATH=$HOME/Development/go"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -109,15 +113,17 @@ export "GOPATH=$HOME/Development/go"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
 
 alias gtw="google-chrome-stable \`sed -n 1p .links\`"
 alias gtb="google-chrome-stable \`sed -n 2p .links\`"
 alias gtv="google-chrome-stable \`sed -n 3p .links\`"
 alias v="nvim"
-alias bris-sync="rclone sync ~/CS bris:"
+alias ovim="vim.basic"
+#alias bris-sync="rclone sync ~/CS bris:"
 alias bris-snowy="ssh snowy"
 alias bris-windows="rdesktop -u UOB\za18968 -g 1920x1020 studentremotedesktop.bris.ac.uk"
 alias cs="cd ~/CS/"
 alias logisim="java -jar ~/CS/ComputerArchitecture/Logisim/logisim-generic-2.7.1.jar"
 alias open="xdg-open"
+alias y2="cd ~/Documents/uni/Year2/"
+alias c="xclip"

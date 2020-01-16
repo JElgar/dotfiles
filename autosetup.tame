@@ -23,10 +23,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # Symlinks
 
-ln .vimrc ~/.vimrc 
-ln .Xresources ~/.Xresources 
-ln .zshrc ~/.zshrc
-ln .tmux.conf ~/.tmux.conf
+ln files/.vimrc ~/.vimrc 
+ln files/.Xresources ~/.Xresources 
+ln files/.zshrc ~/.zshrc
+ln files/.tmux.conf ~/.tmux.conf
 
 mkdir -p ~/.config/nvim/
 ln ~/.vimrc ~/.config/nvim/init.vim
