@@ -52,3 +52,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
+
+(setq
+ projectile-project-search-path '("~/Documents/dev/")
+)
+
+(setq company-idle-delay 0.2
+      company-minimum-prefix-length 3)
